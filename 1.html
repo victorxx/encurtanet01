@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- Codificação -->
+  <meta charset="UTF-8">
+
+  <!-- Responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página -->
+  <title>Últimas Notícias do Brasil - Política, Economia, Esportes e Clima</title>
+
+  <!-- Meta descrição (até ~160 caracteres) -->
+  <meta name="description" content="Confira as últimas notícias do Brasil atualizadas diariamente: política, economia, esportes, clima e muito mais. Informação com credibilidade.">
+
+  <!-- Palavras-chave (menos importante para o Google hoje, mas ainda usado por outros motores) -->
+  <meta name="keywords" content="notícias do brasil, política, economia, futebol, clima, atualizações, jornal online, governo, seleção brasileira">
+
+  <!-- Autor -->
+  <meta name="author" content="Portal Brasil News">
+
+  <!-- Indexação (permitido para Google e outros motores) -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Cor padrão para mobile browsers -->
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph (Facebook, WhatsApp etc.) -->
+  <meta property="og:title" content="Últimas Notícias do Brasil - Atualizações em Tempo Real">
+  <meta property="og:description" content="Veja as principais notícias do dia sobre economia, política, clima e futebol no Brasil. Acesse agora.">
+  <meta property="og:image" content="https://www.seusite.com/imagens/og-noticias.jpg">
+  <meta property="og:url" content="https://www.seusite.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Últimas Notícias do Brasil">
+  <meta name="twitter:description" content="Atualizações diárias com credibilidade sobre tudo o que acontece no país.">
+  <meta name="twitter:image" content="https://www.seusite.com/imagens/twitter-noticias.jpg">
+  <meta name="twitter:site" content="@seuusuario">
+  <title>Notícias do Brasil</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; }
+    .noticia { background: #fff; padding: 20px; margin-bottom: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .noticia h2 { margin-top: 0; }
+    .categoria { color: #007BFF; font-weight: bold; }
+    .tags span { background: #e0e0e0; padding: 5px 8px; margin-right: 5px; border-radius: 3px; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <h1>Últimas Notícias do Brasil</h1>
+<iframe src="https://victorxx.github.io/encurtanet01/" width="300" height="500"></iframe>
+  <div id="noticias"></div>
+
+
+  <script>
+    const noticiasBrasil = [
+      {
+        titulo: "Governo anuncia novo reajuste do salário mínimo para 2025",
+        slug: "governo-anuncia-reajuste-salario-minimo-2025",
+        categoria: "Economia",
+        data: "2025-07-18",
+        resumo: "O Governo Federal confirmou hoje o novo valor do salário mínimo que passa a valer a partir de janeiro de 2025. O aumento segue a política de valorização salarial.",
+        tags: ["salário mínimo", "economia", "governo", "reajuste 2025"]
+      },
+      {
+        titulo: "Frente fria avança e derruba temperaturas no Sul e Sudeste",
+        slug: "frente-fria-temperaturas-sul-sudeste-julho-2025",
+        categoria: "Clima",
+        data: "2025-07-18",
+        resumo: "O INMET alertou para a chegada de uma frente fria que poderá provocar geadas e temperaturas abaixo de zero em algumas regiões do Brasil.",
+        tags: ["clima", "frio", "sul do brasil", "previsão do tempo"]
+      },
+      {
+        titulo: "Brasil vence Argentina nas Eliminatórias e lidera grupo",
+        slug: "brasil-vence-argentina-eliminatorias-2025",
+        categoria: "Esportes",
+        data: "2025-07-17",
+        resumo: "Com dois gols de Vinícius Júnior, o Brasil derrotou a Argentina em partida válida pelas Eliminatórias da Copa. A seleção brasileira assume a liderança do grupo.",
+        tags: ["futebol", "eliminatórias", "seleção brasileira", "brasil vs argentina"]
+      }
+    ];
+
+    const container = document.getElementById("noticias");
+
+    noticiasBrasil.forEach(noticia => {
+      const div = document.createElement("div");
+      div.className = "noticia";
+      div.innerHTML = `
+        <h2><a href="/noticia/${noticia.slug}" title="${noticia.titulo}">${noticia.titulo}</a></h2>
+        <p class="categoria">${noticia.categoria} | <small>${new Date(noticia.data).toLocaleDateString("pt-BR")}</small></p>
+        <p>${noticia.resumo}</p>
+        <div class="tags">
+          ${noticia.tags.map(tag => `<span>#${tag}</span>`).join(' ')}
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
